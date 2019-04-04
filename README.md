@@ -1,2 +1,2 @@
 # PosturaBot
-Bot que se preocupa com a sua postura!
+Bot do telegram que se preocupa com a sua postura!
