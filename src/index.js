@@ -7,15 +7,17 @@ const session = require('telegraf/session')
 let bot = new Telegraf(process.env.BOT_TOKEN)
 // let telegramApi = new Telegram(process.env.BOT_TOKEN)
 
+const interval = process.env.WARNING_INTERVAL * 3600000
+
 bot.use(session())
 bot.start((ctx) => {
   if (!ctx.session.warning) {
     // chats.add(ctx.chat.id)
     ctx.reply('Se preparem para a coluna SUPREMA!')
-    ctx.reply(`em ${process.env.WARNING_INTERVAL * (3600000 / 60000)} minutos eu boto pra quebrar!`)
+    ctx.reply(`em ${interval / 60000} minutos eu boto pra quebrar!`)
     let intervalId = setInterval(async () => {
       ctx.reply('POSTURA!')
-    }, process.env.WARNING_INTERVAL)
+    }, interval)
     ctx.session.warning = {
       chatId: ctx.chat.id,
       warningId: intervalId
