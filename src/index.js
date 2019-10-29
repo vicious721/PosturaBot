@@ -1,3 +1,5 @@
+const app = require("express")();
+
 require('dotenv').config()
 // const Telegram = require('telegraf/telegram')
 const Telegraf = require('telegraf')
@@ -33,9 +35,16 @@ bot.command('abort', (ctx) => {
 })
 
 bot.command('arrumei', (ctx) => {
-    ctx.reply('Parabéns vocÊ arrumeu sou postura, fale com o eduardo para acresentar mais funcoinalidades para a aplicação!')
+    ctx.reply('ctx.message.from.username!')
 })
 
-bot.launch()
+const PORT = process.env.PORT || 5000;
 
-console.log('Bot running!')
+app.get('/', (req, res) => {
+  res.json({message: "hello amigos"})
+})
+
+app.listen(PORT, () => {
+  console.log(`Bot running! At the port ${PORT}`)
+  bot.launch()
+})
