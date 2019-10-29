@@ -33,7 +33,7 @@ bot.command('abort', (ctx) => {
 })
 
 bot.command('arrumei', (ctx) => {
-
+    ctx.reply('Parabéns vocÊ arrumeu sou postura, fale com o eduardo para acresentar mais funcoinalidades para a aplicação!')
 })
 
 bot.launch()
