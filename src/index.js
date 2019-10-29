@@ -17,7 +17,7 @@ bot.start((ctx) => {
     // chats.add(ctx.chat.id)
     ctx.reply('Se preparem para a coluna SUPREMA!');
     ctx.reply(`em ${interval / 60000} minutos eu boto pra quebrar!`);
-    let intervalId = setInterval(async () => {
+    let intervalId = setInterval(() => {
       ctx.reply('POSTURA!');
     }, interval)
     ctx.session.warning = {
@@ -35,7 +35,7 @@ bot.command('abort', (ctx) => {
 })
 
 bot.command('arrumei', (ctx) => {
-    ctx.reply(`Parabéns ${ctx.message.from.username} você arrumou sou postura, fale com o eduardo para acresentar mais funcoinalidades para a aplicação`);
+    ctx.reply(`Parabéns ${ctx.message.from.first_name} você arrumou sou postura, fale com o eDUARDO para acresentar mais funcoinalidades para a aplicação 🍰`);
 })
 
 const PORT = process.env.PORT || 5000;
